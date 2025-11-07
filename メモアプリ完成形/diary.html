@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>日記アプリ</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+  <main class="container">
+    <h1>日記要約アプリ</h1>
+    <button id="themeToggle" class="btn small">テーマ切替</button>
+
+    <section class="composer">
+      <textarea id="diaryInput" rows="6" placeholder="ここに日記を書く…（Ctrl / Cmd + Enterで保存）"></textarea>
+      <div class="muted" id="charCount">0 文字</div>
+
+      <div class="row">
+        <button id="saveButton" class="btn primary">決定</button>
+        <button id="clearButton" class="btn danger">全削除</button>
+        <input id="searchInput" class="search" type="text" placeholder="検索（本文・要約・答え）">
+      </div>
+    </section>
+
+    <div id="tagFilter" class="tags"></div>
+    <div id="diaryList" class="list"></div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

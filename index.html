@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja" class="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Urakawa Haruto | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <meta name="description" content="独学で制作した日記アプリと自己紹介。要約・感情タグ・設問で内省を支援し、次の一歩を見つけるポートフォリオ。">
+</head>
+<body>
+
+  <!-- ヘッダー（シンプル） -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <a class="brand" href="index.html">Urakawa Haruto</a>
+      <nav class="nav">
+        <a href="../自己紹介/profile.html">自己紹介</a>
+        <a href="../メモアプリ完成形/diary.html">日記アプリ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:16px">
+
+    <!-- ヒーロー（ボタンは削除） -->
+    <section class="port-hero card">
+      <h1>ポートフォリオ</h1>
+      <p class="muted">大学での経験と、独学で制作した日記アプリをまとめています。</p>
+    </section>
+
+    <!-- プロジェクト（リンクはカードに集約） -->
+    <section class="port-grid">
+      <article class="port-card card">
+        <h3>自己紹介WEBサイト</h3>
+        <p class="muted">大学での経験と学びを一枚に整理。</p>
+        <ul>
+          <li>ABOUT / 経験 / スキル</li>
+          <li>読みやすさ重視のUI</li>
+        </ul>
+        <a class="btn" href="../自己紹介/profile.html">ページを開く</a>
+      </article>
+
+      <article class="port-card card">
+        <h3>日記アプリ</h3>
+        <p class="muted">要約・感情タグ・設問で内省を促し、次の一歩を見つける。</p>
+        <ul>
+          <li>保存：localStorage（即時復元）</li>
+          <li>機能：検索・タグ絞り込み・編集/削除・ライト/ダーク</li>
+        </ul>
+        <a class="btn primary" href="../メモアプリ完成形/diary.html">アプリを開く</a
+      </article>
+    </section>
+
+    <!-- 制作の背景（要約＋折りたたみ詳細） -->
+    <section class="card">
+      <h2>制作の背景</h2>
+      <p>
+        「偶然」に見える体験は、無意識の関心に導かれた<strong>潜在的選択</strong>かもしれない。
+        その手がかりを逃さないために日々を記録し客観視する——この考えから、AI活用を見据えた日記アプリを試作しました。
+      </p>
+      <details class="port-fold">
+        <summary>詳しく読む</summary>
+        <div class="fold-body">
+          <p>
+            研究では選択的注意や確証バイアスの観点から、偶然を能動的に意味づけることで行動の
+            <strong>転機</strong>に変えられると考えました。記録をして日々の自分を見つめなおすことで
+            今の状態を可視化して次の一歩を見つけることができると考えたためこのアプリを制作しました。
+          </p>
+        </div>
+      </details>
+    </section>
+
+    <!-- スクリーンショット（下の「③」を見て画像を置いてね） -->
+    <section class="card">
+  <h2>スクリーンショット</h2>
+  <div class="gallery">
+    <figure>
+      <img src="自己紹介/images/67310796-f89e-4133-9a5c-7c481b5d4d65.png" alt="ポートフォリオのトップ画面">
+      <figcaption class="muted">トップ画面</figcaption>
+    </figure>
+    <figure>
+      <img src="自己紹介/images/00dc31d8-5d3f-463c-8306-e901a46a5e9f.png" alt="日記アプリのカード一覧">
+      <figcaption class="muted">日記アプリの一覧</figcaption>
+    </figure>
+  </div>
+</section>
+
+
+    <!-- 使い方（3手順） -->
+    <section class="card">
+      <h2>使い方</h2>
+      <ol>
+        <li>テキスト欄に日記を書き「決定」を押す</li>
+        <li>要約と感情タグが自動生成される</li>
+        <li>検索やタグで振り返り、必要に応じて編集/削除</li>
+      </ol>
+    </section>
+
+    <!-- 連絡先 -->
+    <section class="card">
+      <h2>連絡先</h2>
+      <p>Email：<a href="mailto:u.haruto8610@gmail.com">u.haruto8610@gmail.com</a></p>
+    </section>
+
+  </main>
+</body>
+</html>

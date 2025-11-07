@@ -1,0 +1,194 @@
+:root{
+  --bg:#0b0c10; --panel:#121318; --text:#e9eef5; --muted:#aab2bd;
+  --accent:#4aa8ff; --danger:#ff5f6d; --ring:rgba(74,168,255,.35);
+  --radius:14px;
+}
+/* 明るいテーマ */
+:root.light{
+  --bg:#f7f7f9; --panel:#ffffff; --text:#111; --muted:#555;
+  --accent:#1a65ff; --danger:#d81b60; --ring:rgba(26,101,255,.25);
+}
+
+/* Reset */
+*{ box-sizing:border-box; }
+
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  font-family: system-ui,"Noto Sans JP",sans-serif;
+}
+
+/* レイアウト */
+.container{
+  max-width:900px;
+  margin:24px auto;
+  padding:0 16px;
+}
+
+/* タイトル・細文字 */
+h1{ margin-bottom:6px; }
+.muted{ font-size:12px; color:var(--muted); }
+
+/* composer（入力エリアの箱） */
+.composer{
+  background:var(--panel);
+  padding:14px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.08);
+  margin-top:16px;
+}
+
+/* 入力欄＆検索欄 */
+textarea, .search{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  background:#0e1016;
+  color:var(--text);
+  border:1px solid rgba(255,255,255,.14);
+}
+
+/* 明るいテーマ時の入力欄 */
+:root.light textarea,
+:root.light .search{
+  background:#fff;
+  color:var(--text);
+  border-color:rgba(0,0,0,.2);
+}
+
+/* 入力欄フォーカス */
+textarea:focus, .search:focus{
+  border-color:var(--accent);
+  box-shadow:0 0 0 4px var(--ring);
+  outline:none;
+}
+
+/* 横並び（決定・削除・検索） */
+.row{
+  display:flex;
+  gap:8px;
+  margin-top:8px;
+  flex-wrap:wrap;
+}
+.search{ flex:1; }
+
+/* ボタン */
+.btn{
+  padding:8px 14px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:#1b1e27;
+  color:var(--text);
+  transition: filter .15s ease, box-shadow .15s ease, transform .02s;
+}
+
+/* ボタンの触り心地（← UIレベルで大事なとこ） */
+.btn:hover{ filter:brightness(1.08); }
+.btn:active{ transform:translateY(1px); }
+.btn:focus-visible{ outline:none; box-shadow:0 0 0 4px var(--ring); }
+
+/* 小さめ（テーマ切替） */
+.btn.small{ padding:6px 10px; }
+
+/* 決定ボタン */
+.btn.primary{
+  background:linear-gradient(180deg,#4aa8ff,#1042b8);
+}
+
+/* 危険操作 */
+.btn.danger{ background:var(--danger); }
+.btn.danger:hover{ filter:brightness(0.96); }
+
+/* タグ */
+.tags{ display:flex; gap:6px; margin:12px 0; flex-wrap:wrap; }
+.tag{
+  padding:6px 10px;
+  border-radius:999px;
+  border:1px solid var(--muted);
+  cursor:pointer;
+}
+.tag.active{ outline:2px solid var(--accent); }
+
+/* リストとカード */
+.list{ display:grid; gap:12px; margin-top:8px; }
+.card{
+  background:var(--panel);
+  padding:12px;
+  border-radius:var(--radius);
+  border:1px solid rgba(255,255,255,.08);
+}
+.head{ display:flex; justify-content:space-between; align-items:center; }
+
+.badges{ display:flex; gap:6px; margin:6px 0; }
+.badge{
+  padding:3px 8px;
+  font-size:11px;
+  border-radius:999px;
+  background:#18202c;
+}
+
+/* 質問の見せ方 */
+.q{ font-weight:600; margin-top:6px; }
+.answerRow{ display:flex; gap:8px; margin-top:6px; }
+.answered{
+  background:#18202c;
+  padding:6px;
+  border-left:4px solid var(--accent);
+  border-radius:6px;
+}
+
+/* ───────────────────────────────
+   Light テーマ用の上書きスタイル
+   （style.css の一番下に貼る）
+─────────────────────────────── */
+
+/* ボタン（編集ボタン、テーマ切替ボタンなど共通） */
+:root.light .btn {
+  background: #f2f4f8;
+  color: #111;
+  border: 1px solid rgba(0,0,0,.15);
+}
+:root.light .btn:hover {
+  filter: brightness(1.05);
+}
+
+/* 主要ボタン（決定ボタン） */
+:root.light .btn.primary {
+  background: linear-gradient(180deg, var(--accent), #174fc9);
+  color: #fff;
+}
+
+/* 危険操作ボタン（削除） */
+:root.light .btn.danger {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* タグボタン */
+:root.light .tag {
+  background: #fff;
+  color: #111;
+  border-color: rgba(0,0,0,.2);
+}
+:root.light .tag.active {
+  outline: 2px solid var(--accent);
+}
+
+/* バッジ（今日 / 昨日 など） */
+:root.light .badge {
+  background: #eef1f5;
+  color: #111;
+}
+
+/* 回答ボックス */
+:root.light .answered {
+  background: #eef3ff;
+}
+
+/* カードと入力エリア枠線の調整 */
+:root.light .card,
+:root.light .composer {
+  border-color: rgba(0,0,0,.08);
+}
