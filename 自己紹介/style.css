@@ -537,3 +537,52 @@ img, video { max-width: 100%; height: auto; display: block; }
     padding: 6px;
   }
 }
+
+/* ===== 1) まず “グローバル” はPC寄りのデフォルトにしておく ===== */
+.main-header { height: auto; padding: 12px 24px; flex-direction: row; }
+body { padding-top: 0; }               /* 固定ヘッダー分の余白はPCでは不要 */
+.profile-image { height: 700px; }      /* PCは従来の高さに戻す */
+.myself, .experiences, .skills, .philosophy { width: 45%; } /* 2カラム維持 */
+.gallery-images, .intern-images, .zemi-images { flex-wrap: nowrap; }
+.gallery-item { width: 32%; }
+.intern-item  { width: 25%; }
+.zemi-item    { width: 50%; }
+
+/* ===== 2) タブレット以下（ここに “モバイル用の変更” を閉じ込める）===== */
+@media (max-width: 768px) {
+  /* 固定ヘッダーの重なり回避はモバイルだけに適用 */
+  body { padding-top: 56px; overflow-x: hidden; }
+
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 8px 12px;
+  }
+  .main-header ul { flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+
+  /* ヒーロー画像は可変に（ここでだけ上書き） */
+  .profile-image { height: min(60vh, 420px); align-items: center; }
+  .profile-image h2 { font-size: clamp(24px, 7vw, 50px); text-align: center; }
+
+  /* 1カラム化 */
+  .myself, .experiences, .skills, .philosophy { width: 100%; }
+
+  /* グリッド/ギャラリーは折り返す */
+  .gallery-images, .intern-images, .zemi-images { flex-wrap: wrap; gap: 16px; }
+  .gallery-item, .intern-item { width: 48%; }
+  .zemi-item { width: 100%; }
+
+  .gallery-item img, .intern-item img, .zemi-item img { height: 180px; }
+
+  /* ボタン・リンクは押しやすく */
+  .contact-links a, .link-buttons a { display:block; width:100%; margin:8px 0; text-align:center; }
+}
+
+/* ===== 3) さらに狭いスマホ ===== */
+@media (max-width: 480px) {
+  .gallery-item, .intern-item, .zemi-item { width: 100%; }
+  .gallery-item img, .intern-item img, .zemi-item img { height: 160px; }
+
+  .main-header a { font-size: 0.9rem; padding: 6px; }
+}
