@@ -491,3 +491,49 @@ img, video { max-width: 100%; height: auto; display: block; }
   .contact-links a,
   .link-buttons a { display:block; width:100%; margin:8px 0; text-align:center; }
 }
+
+/* ===== スマホ用ナビゲーション修正 ===== */
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column;       /* 縦積みにする */
+    align-items: flex-start;
+    height: auto;                /* 固定高さを解除 */
+    padding: 8px 12px;
+  }
+
+  .main-header h1 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  .main-header ul {
+    flex-wrap: wrap;             /* 折り返し可能に */
+    justify-content: flex-start;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    gap: 8px;
+  }
+
+  .main-header li {
+    flex: 1 1 auto;
+  }
+
+  .main-header a {
+    display: block;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== より小さいスマホ ===== */
+@media (max-width: 480px) {
+  .main-header h1 {
+    font-size: 16px;
+  }
+  .main-header a {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}
