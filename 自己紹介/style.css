@@ -424,3 +424,70 @@ body{
     color: #888; /* 控えめな色 */
     margin: 0; /* pタグのデフォルトマージンをリセット */
 }
+
+/* ===== モバイル安定化：共通 ===== */
+
+/* 固定ヘッダー分、本文を下げる（ヘッダー高さは56px想定） */
+body { padding-top: 56px; overflow-x: hidden; }
+
+/* ヘッダーを一定高さに（なければ付与） */
+.main-header { height: 56px; padding: 8px 16px; }
+.main-header ul { flex-wrap: wrap; gap: 4px; }
+
+/* ヒーロー画像：固定700pxをやめ、画面に応じた高さに */
+.profile-image{
+  /* 既存のheight:700px; を上書き */
+  height: min(60vh, 420px);
+  /* あるいはアスペクト比で管理したい場合は↓でもOK
+  aspect-ratio: 16 / 9;
+  height: auto;
+  */
+  align-items: center; /* 中央寄せ補助 */
+}
+.profile-image h2{
+  font-size: clamp(24px, 7vw, 50px);
+  text-align: center;
+}
+
+/* 画像がはみ出さないように */
+img, video { max-width: 100%; height: auto; display: block; }
+
+/* カード類の固定幅を可変に */
+.myself, .experiences, .skills, .philosophy { width: 100%; }
+
+/* ギャラリーの横並びは小画面で折り返す */
+.gallery-images, .intern-images, .zemi-images { flex-wrap: wrap; }
+
+/* ====== ここからブレークポイント ====== */
+
+/* タブレット以下 */
+@media (max-width: 768px) {
+  /* プロフィール情報の2カラム→1〜2カラムに自動調整 */
+  .profile-information { gap: 16px; }
+
+  /* ギャラリー3/4カラム → 2カラム */
+  .gallery-item { width: 48%; }
+  .intern-item  { width: 48%; }
+  .zemi-item    { width: 100%; } /* 画像が大きいようなので1列推奨 */
+
+  /* 画像の高さを少し低めに（比率維持） */
+  .gallery-item img,
+  .intern-item img,
+  .zemi-item img { height: 180px; }
+}
+
+/* スマホ（狭い） */
+@media (max-width: 480px) {
+  /* すべて1カラムで読みやすく */
+  .gallery-item,
+  .intern-item,
+  .zemi-item { width: 100%; }
+
+  .gallery-item img,
+  .intern-item img,
+  .zemi-item img { height: 160px; }
+
+  /* ボタンは全幅でタップしやすく */
+  .contact-links a,
+  .link-buttons a { display:block; width:100%; margin:8px 0; text-align:center; }
+}
