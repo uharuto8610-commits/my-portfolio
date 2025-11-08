@@ -586,3 +586,14 @@ body { padding-top: 0; }               /* 固定ヘッダー分の余白はPCで
 
   .main-header a { font-size: 0.9rem; padding: 6px; }
 }
+
+.detail-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+.detail-link:hover {
+  text-decoration: underline;
+}
