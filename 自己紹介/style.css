@@ -423,3 +423,8 @@ img, video {
   .intern-item img,
   .zemi-item img { height: 160px; }
 }
+
+/* ギャラリー3枚目の画像だけ、表示位置を上に寄せる */
+.gallery-images .gallery-item:nth-child(3) img {
+  object-position: top center;
+}
