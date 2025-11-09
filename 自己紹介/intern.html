@@ -4,9 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>サービスラーニング / インターン | 自己紹介</title>
+
+  <!-- 共通スタイル -->
   <link rel="stylesheet" href="style.css" />
+
   <style>
-    /* 最小限の見た目補助（既存CSSに同等があれば不要） */
+    /* ページ内だけの簡易レイアウト補助 */
     .container { max-width: 1000px; margin: 80px auto 40px; padding: 0 16px; }
     .card { background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.08); padding:20px; margin:12px 0; }
     .breadcrumb { font-size:.9rem; margin-bottom:8px; opacity:.85; }
@@ -17,78 +20,91 @@
 </head>
 <body>
    
-  <!-- ヘッダー：profile と同じナビ -->
+  <!-- ========== 固定ヘッダー（プロフィールページと共通） ========== -->
   <header class="main-header">
     <h1>自己紹介</h1>
     <ul>
+      <!-- 現在表示しているページを aria-current で明示 -->
       <li><a href="maleysia.html">留学</a></li>
       <li><a href="intern.html" aria-current="page">サービスラーニング</a></li>
       <li><a href="zemi.html">ゼミ活動</a></li>
     </ul>
   </header>
+
+  <!-- ヘッダー固定による余白調整 -->
   <div style="height: 60px;"></div>
+
+  <!-- パンくずリスト：前のページに戻れる導線 -->
   <nav class="breadcrumb">
-  <a href="profile.html">← プロフィールに戻る</a>
-</nav>
+    <a href="profile.html">← プロフィールに戻る</a>
+  </nav>
 
-<section class="card">
-  <h2 class="section-title">概要</h2>
-  <p>大学のサービスラーニング授業で、<strong>KGG（北九州グローバルゲートウェイ）</strong> と <strong>塾ラッキーラボ</strong> の2つの場所で活動しました。
-    ボランティアと自己成長を組み合わせた学びで、「相手のために動くこと」と「自分の力で考えて工夫すること」を実践しました。</p>
-</section>
+  <!-- ========== 概要 ========== -->
+  <section class="card">
+    <h2 class="section-title">概要</h2>
+    <p>大学のサービスラーニング授業で、<strong>KGG（北九州グローバルゲートウェイ）</strong> と <strong>塾ラッキーラボ</strong> の2つの場所で活動しました。
+      ボランティアと自己成長を組み合わせた学びで、「相手のために動くこと」と「自分の力で考えて工夫すること」を実践しました。
+    </p>
+  </section>
 
+  <!-- ========== ① KGG ========== -->
+  <section class="card">
+    <h2 class="section-title">① KGG（北九州グローバルゲートウェイ）</h2>
+    <p>学生が英語を使いコミュニケーションを学ぶ施設で、スタッフや外国人講師のサポートに加えて、
+      <strong>謎解き脱出ゲーム</strong> の企画・運営を行いました。</p>
 
-<section class="card">
-  <h2 class="section-title">① KGG（北九州グローバルゲートウェイ）</h2>
-  <p>学生が英語を使ってコミュニケーションを学ぶ施設で、スタッフや外国人講師のサポートに加えて、施設全体を使った
-    <strong>謎解き脱出ゲーム</strong> の企画・運営を行いました。</p>
+    <!-- 自分が担当した内容 -->
+    <h3>自分が担当したこと</h3>
+    <ul>
+      <li>小中学生向けの<strong>謎解き問題の作成</strong></li>
+      <li><strong>死者の日</strong>をモチーフにした装飾制作</li>
+      <li><strong>当日の進行サポート（英語）</strong></li>
+      <li><strong>チラシ配布などの集客活動</strong></li>
+    </ul>
 
-  <h3>自分が担当したこと</h3>
-  <ul>
-    <li>小中学生が楽しめる、難しすぎず簡単すぎない<strong>謎解きクイズの制作</strong></li>
-    <li><strong>死者の日</strong>をテーマにした装飾（マリーゴールド、旗飾り、照明演出など）の制作</li>
-    <li>外国人スタッフが進行するため、<strong>英語での当日のサポート</strong></li>
-    <li>参加者を集めるための<strong>チラシ配布と広報</strong></li>
-  </ul>
+    <p>当日は多くの子どもたちが参加し、<strong>景品のノゴローグッズが途中で売り切れるほど好評</strong>でした。</p>
 
-  <p>当日は予想以上に多くの子どもたちが参加し、<strong>景品のノゴローグッズが途中で売り切れるほど人気</strong>になりました。</p>
+    <!-- ここで得た学び -->
+    <h3>ここで得られた学び</h3>
+    <ul>
+      <li>相手の立場で考える視点が重要だと実感した</li>
+      <li>外国人スタッフとの協働により、<strong>簡潔に英語で伝える力</strong>がついた</li>
+    </ul>
+  </section>
 
-  <h3>ここで得られた学び</h3>
-  <ul>
-    <li>「相手が楽しむ」「伝わりやすい」企画にするには、<strong>対象の目線に立って考えることが大切</strong>だと実感した。</li>
-    <li>外国人スタッフとの連携を通じて、<strong>英語でも内容を簡潔に伝える習慣</strong>が身についた。</li>
-  </ul>
-</section>
+  <!-- ========== ② 塾ラッキーラボ ========== -->
+  <section class="card">
+    <h2 class="section-title">② 塾ラッキーラボ</h2>
+    <p>勉強が苦手な子や不登校の子も通う学習塾で、学習補助と教材制作を行いました。</p>
 
+    <!-- 教材紹介 -->
+    <h3>制作した教材</h3>
+    <p>
+      <strong>映画の1シーンを使ったシャドーイング教材</strong>を制作。  
+      「言ってみる → 意味をつかむ → できた感覚を味わう」体験を通して、
+      <strong>楽しみながら理解できる英語学習</strong>を目指しました。
+    </p>
 
-<section class="card">
-  <h2 class="section-title">② 塾ラッキーラボ</h2>
-  <p>勉強が苦手な子や不登校の子も通う学習塾で、学習補助と教材制作を行いました。</p>
+    <!-- 学び -->
+    <h3>気づいたこと</h3>
+    <ul>
+      <li>「勉強が嫌い」ではなく<strong>“わからないことが怖い”</strong>だけの子が多いと知った</li>
+      <li>先生方は子どもに合わせて話し方や教え方を変えており、<strong>関わり方の工夫</strong>が大切だと感じた</li>
+    </ul>
+  </section>
 
-  <h3>制作した教材</h3>
-  <p><strong>映画の1シーンを使ったシャドーイング教材</strong>を作成。  
-    英語をただ教えるのではなく、<strong>「真似して言ってみる → 意味を掴む → できた感覚を味わう」</strong>流れで、  
-    子どもが<strong>楽しみながら英語を理解できる経験</strong>をつくりたいと考えました。</p>
+  <!-- ========== 成長 ========== -->
+  <section class="card">
+    <h2 class="section-title">成長したこと</h2>
+    <ul>
+      <li><strong>相手の目線を考える力</strong>が強くなった</li>
+      <li>自分から動いて<strong>企画・改善を提案できる勇気</strong>がついた</li>
+      <li>対話・協力を通して、<strong>人の役に立てる実感</strong>を得られた</li>
+    </ul>
 
-  <h3>気づいたこと</h3>
-  <ul>
-    <li>子どもたちは「勉強が嫌い」なのではなく、<strong>わからない・できないことが嫌い</strong></li>
-    <li>一人ひとりに合わせて話し方や教え方を変える先生方から、<strong>関わり方の工夫</strong>の大切さを学んだ</li>
-  </ul>
-</section>
-
-
-<section class="card">
-  <h2 class="section-title">成長したこと</h2>
-  <ul>
-    <li><strong>相手の立場に立って考える視点</strong>が強くなった</li>
-    <li>自分から企画にアイデアを出し、<strong>行動に移す勇気</strong>が増えた</li>
-    <li>対話や協力を通じて、<strong>自分が相手の役に立てる場面があると実感できた</strong></li>
-  </ul>
-
-  <a class="back" href="profile.html">← プロフィールに戻る</a>
-</section>
+    <!-- 前へ戻る導線 -->
+    <a class="back" href="profile.html">← プロフィールに戻る</a>
+  </section>
 
 </body>
 </html>
-

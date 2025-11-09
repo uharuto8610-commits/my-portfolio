@@ -4,33 +4,43 @@
   <meta charset="UTF-8">
   <title>日記アプリ</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- アプリ全体のレイアウト / ボタン / テーマ切替のスタイル -->
   <link rel="stylesheet" href="style.css">
-
-
 </head>
 <body>
-  <div style="text-align:center; margin: 20px 0;">
-  <a href="../自己紹介/profile.html" style="
-    display:inline-block;
-    padding:10px 20px;
-    background:#007bff;
-    color:white;
-    border-radius:6px;
-    text-decoration:none;
-    font-weight:bold;
-  ">
-    ← プロフィールに戻る
-  </a>
-</div>
 
+  <!-- プロフィールへ戻る導線（ポートフォリオ全体での回遊性） -->
+  <div style="text-align:center; margin: 20px 0;">
+    <a href="../自己紹介/profile.html" style="
+      display:inline-block;
+      padding:10px 20px;
+      background:#007bff;
+      color:white;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:bold;
+    ">
+      ← プロフィールに戻る
+    </a>
+  </div>
+
+  <!-- アプリ本体 -->
   <main class="container">
     <h1>日記要約アプリ</h1>
+
+    <!-- ライト / ダークテーマ切替 -->
     <button id="themeToggle" class="btn small">テーマ切替</button>
 
+    <!-- 入力エリア（本文入力 + 文字数 + 操作ボタン） -->
     <section class="composer">
+      <!-- 日記本文入力 -->
       <textarea id="diaryInput" rows="6" placeholder="ここに日記を書く…（Ctrl / Cmd + Enterで保存）"></textarea>
+
+      <!-- 入力文字数表示 -->
       <div class="muted" id="charCount">0 文字</div>
 
+      <!-- 保存 / 全削除 / 検索 -->
       <div class="row">
         <button id="saveButton" class="btn primary">決定</button>
         <button id="clearButton" class="btn danger">全削除</button>
@@ -38,10 +48,14 @@
       </div>
     </section>
 
+    <!-- タグフィルタ（ポジティブ / 不安 / 疲労 など） -->
     <div id="tagFilter" class="tags"></div>
+
+    <!-- 日記一覧（要約 / 質問 / 回答入力フォーム などを含む） -->
     <div id="diaryList" class="list"></div>
   </main>
 
+  <!-- 機能のメイン処理：保存 / 要約生成 / タグ分析 / 検索 -->
   <script src="script.js"></script>
 </body>
 </html>

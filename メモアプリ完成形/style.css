@@ -1,194 +1,222 @@
+/* =======================================
+   Theme Tokens
+   ======================================= */
 :root{
-  --bg:#0b0c10; --panel:#121318; --text:#e9eef5; --muted:#aab2bd;
-  --accent:#4aa8ff; --danger:#ff5f6d; --ring:rgba(74,168,255,.35);
-  --radius:14px;
+  --bg:#0b0c10;        /* 背景（Dark） */
+  --panel:#121318;     /* パネル面 */
+  --text:#e9eef5;      /* 主要テキスト */
+  --muted:#aab2bd;     /* 補助テキスト */
+  --accent:#4aa8ff;    /* 強調・アクション */
+  --danger:#ff5f6d;    /* 危険操作 */
+  --ring:rgba(74,168,255,.35); /* フォーカスリング */
+  --radius:14px;       /* 角丸 */
 }
-/* 明るいテーマ */
+/* Light テーマ（:root に .light が付いたとき） */
 :root.light{
-  --bg:#f7f7f9; --panel:#ffffff; --text:#111; --muted:#555;
-  --accent:#1a65ff; --danger:#d81b60; --ring:rgba(26,101,255,.25);
+  --bg:#f7f7f9;
+  --panel:#ffffff;
+  --text:#111;
+  --muted:#555;
+  --accent:#1a65ff;
+  --danger:#d81b60;
+  --ring:rgba(26,101,255,.25);
 }
 
-/* Reset */
-*{ box-sizing:border-box; }
+/* =======================================
+   Base / Reset
+   ======================================= */
+* { box-sizing: border-box; }
 
 body{
-  margin:0;
-  background:var(--bg);
-  color:var(--text);
-  font-family: system-ui,"Noto Sans JP",sans-serif;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, "Noto Sans JP", sans-serif;
 }
 
-/* レイアウト */
 .container{
-  max-width:900px;
-  margin:24px auto;
-  padding:0 16px;
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
 }
 
-/* タイトル・細文字 */
-h1{ margin-bottom:6px; }
-.muted{ font-size:12px; color:var(--muted); }
+h1{ margin-bottom: 6px; }
+.muted{ font-size: 12px; color: var(--muted); }
 
-/* composer（入力エリアの箱） */
+/* =======================================
+   Composer（入力エリア）
+   ======================================= */
 .composer{
-  background:var(--panel);
-  padding:14px;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.08);
-  margin-top:16px;
+  background: var(--panel);
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.08);
+  margin-top: 16px;
 }
 
-/* 入力欄＆検索欄 */
-textarea, .search{
-  width:100%;
-  padding:10px;
-  border-radius:10px;
-  background:#0e1016;
-  color:var(--text);
-  border:1px solid rgba(255,255,255,.14);
+/* 入力欄＆検索欄（共通） */
+textarea,
+.search{
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: #0e1016;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.14);
 }
 
-/* 明るいテーマ時の入力欄 */
-:root.light textarea,
-:root.light .search{
-  background:#fff;
-  color:var(--text);
-  border-color:rgba(0,0,0,.2);
+/* フォーカス（アクセシブルなリング） */
+textarea:focus,
+.search:focus{
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px var(--ring);
+  outline: none;
 }
 
-/* 入力欄フォーカス */
-textarea:focus, .search:focus{
-  border-color:var(--accent);
-  box-shadow:0 0 0 4px var(--ring);
-  outline:none;
-}
-
-/* 横並び（決定・削除・検索） */
+/* 操作行（決定・全削除・検索） */
 .row{
-  display:flex;
-  gap:8px;
-  margin-top:8px;
-  flex-wrap:wrap;
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  flex-wrap: wrap;
 }
-.search{ flex:1; }
+.search{ flex: 1; }
 
-/* ボタン */
+/* =======================================
+   Buttons
+   ======================================= */
 .btn{
-  padding:8px 14px;
-  border:none;
-  border-radius:8px;
-  cursor:pointer;
-  background:#1b1e27;
-  color:var(--text);
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #1b1e27;       /* Dark基調のデフォルト */
+  color: var(--text);
   transition: filter .15s ease, box-shadow .15s ease, transform .02s;
 }
+.btn:hover{  filter: brightness(1.08); }
+.btn:active{ transform: translateY(1px); }
+.btn:focus-visible{
+  outline: none;
+  box-shadow: 0 0 0 4px var(--ring);
+}
 
-/* ボタンの触り心地（← UIレベルで大事なとこ） */
-.btn:hover{ filter:brightness(1.08); }
-.btn:active{ transform:translateY(1px); }
-.btn:focus-visible{ outline:none; box-shadow:0 0 0 4px var(--ring); }
+/* 小さめ（テーマ切替等） */
+.btn.small{ padding: 6px 10px; }
 
-/* 小さめ（テーマ切替） */
-.btn.small{ padding:6px 10px; }
-
-/* 決定ボタン */
+/* 主要アクション */
 .btn.primary{
-  background:linear-gradient(180deg,#4aa8ff,#1042b8);
+  background: linear-gradient(180deg, #4aa8ff, #1042b8);
 }
 
 /* 危険操作 */
-.btn.danger{ background:var(--danger); }
-.btn.danger:hover{ filter:brightness(0.96); }
+.btn.danger{ background: var(--danger); }
+.btn.danger:hover{ filter: brightness(0.96); }
 
-/* タグ */
-.tags{ display:flex; gap:6px; margin:12px 0; flex-wrap:wrap; }
+/* =======================================
+   Tags / Badges
+   ======================================= */
+.tags{
+  display: flex;
+  gap: 6px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
 .tag{
-  padding:6px 10px;
-  border-radius:999px;
-  border:1px solid var(--muted);
-  cursor:pointer;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--muted);
+  cursor: pointer;
 }
-.tag.active{ outline:2px solid var(--accent); }
+.tag.active{ outline: 2px solid var(--accent); }
 
-/* リストとカード */
-.list{ display:grid; gap:12px; margin-top:8px; }
-.card{
-  background:var(--panel);
-  padding:12px;
-  border-radius:var(--radius);
-  border:1px solid rgba(255,255,255,.08);
-}
-.head{ display:flex; justify-content:space-between; align-items:center; }
-
-.badges{ display:flex; gap:6px; margin:6px 0; }
+.badges{ display: flex; gap: 6px; margin: 6px 0; }
 .badge{
-  padding:3px 8px;
-  font-size:11px;
-  border-radius:999px;
-  background:#18202c;
+  padding: 3px 8px;
+  font-size: 11px;
+  border-radius: 999px;
+  background: #18202c;
 }
 
-/* 質問の見せ方 */
-.q{ font-weight:600; margin-top:6px; }
-.answerRow{ display:flex; gap:8px; margin-top:6px; }
+/* =======================================
+   List / Cards
+   ======================================= */
+.list{ display: grid; gap: 12px; margin-top: 8px; }
+
+.card{
+  background: var(--panel);
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.head{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 質問と回答UI */
+.q{ font-weight: 600; margin-top: 6px; }
+.answerRow{ display: flex; gap: 8px; margin-top: 6px; }
 .answered{
-  background:#18202c;
-  padding:6px;
-  border-left:4px solid var(--accent);
-  border-radius:6px;
+  background: #18202c;
+  padding: 6px;
+  border-left: 4px solid var(--accent);
+  border-radius: 6px;
 }
 
-/* ───────────────────────────────
-   Light テーマ用の上書きスタイル
-   （style.css の一番下に貼る）
-─────────────────────────────── */
+/* =======================================
+   Light Overrides（上書きはここに集約）
+   ======================================= */
 
-/* ボタン（編集ボタン、テーマ切替ボタンなど共通） */
-:root.light .btn {
+/* 入力欄（明るい背景） */
+:root.light textarea,
+:root.light .search{
+  background: #fff;
+  color: var(--text);
+  border-color: rgba(0,0,0,.2);
+}
+
+/* ボタン（Light基調の見た目） */
+:root.light .btn{
   background: #f2f4f8;
   color: #111;
   border: 1px solid rgba(0,0,0,.15);
 }
-:root.light .btn:hover {
-  filter: brightness(1.05);
-}
+:root.light .btn:hover{ filter: brightness(1.05); }
 
-/* 主要ボタン（決定ボタン） */
-:root.light .btn.primary {
+/* 主要ボタン（同じ配色で上から被せる） */
+:root.light .btn.primary{
   background: linear-gradient(180deg, var(--accent), #174fc9);
   color: #fff;
 }
 
-/* 危険操作ボタン（削除） */
-:root.light .btn.danger {
+/* 危険操作 */
+:root.light .btn.danger{
   background: var(--danger);
   color: #fff;
 }
 
-/* タグボタン */
-:root.light .tag {
+/* タグ */
+:root.light .tag{
   background: #fff;
   color: #111;
   border-color: rgba(0,0,0,.2);
 }
-:root.light .tag.active {
-  outline: 2px solid var(--accent);
-}
+:root.light .tag.active{ outline: 2px solid var(--accent); }
 
-/* バッジ（今日 / 昨日 など） */
-:root.light .badge {
+/* バッジ */
+:root.light .badge{
   background: #eef1f5;
   color: #111;
 }
 
 /* 回答ボックス */
-:root.light .answered {
-  background: #eef3ff;
-}
+:root.light .answered{ background: #eef3ff; }
 
-/* カードと入力エリア枠線の調整 */
+/* カード系の枠線薄めに */
 :root.light .card,
-:root.light .composer {
+:root.light .composer{
   border-color: rgba(0,0,0,.08);
 }

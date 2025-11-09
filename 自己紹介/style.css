@@ -1,591 +1,328 @@
+/* ===========================
+   Global / Base
+   =========================== */
 
+/* 全体の背景と横スクロール防止（PCでは余白なし） */
+body {
+  background-color: #f7f8fa;
+  padding-top: 0;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+/* 画像・動画は枠からはみ出さない */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===========================
+   Header (固定ナビ)
+   =========================== */
 
 .main-header {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    background-color: #333;
-    position: fixed;
-    width: 100%;
-    z-index: 99;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  background-color: #333;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
 
+  /* PCデフォルト */
+  height: auto;
+  padding: 12px 24px;
+  flex-direction: row;
 }
 
 .main-header h1 {
-    margin: 0;
-    font-size: 20px;
-    color: #fff;
+  margin: 0;
+  font-size: 20px;
+  color: #fff;
 }
 
 .main-header ul {
-    display: flex;
-    list-style: none;
-    margin-right: 20px;
-    margin-left: auto;
+  display: flex;
+  list-style: none;
+  margin-right: 20px;
+  margin-left: auto;
+  padding: 0;
+  gap: 0;
 }
 
-
-
 .main-header a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 8px 16px;
-    border-radius: 4px;
-    transition: background 0.2s;
-    font-size: 1rem;    
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  font-size: 1rem;
 }
 
 .main-header ul li a:hover {
-    background-color: #444;
+  background-color: #444;
 }
 
-.profile-image{
-    background-image: url("images/C105737E-190E-4DEE-9575-85D298D22723.JPEG");
-    background-size: cover;
-    width: auto;
-    height: 700px;
-    display: flex;
-    color: white;
-    background-position: center 60%;
+/* ===========================
+   Hero / Profile
+   =========================== */
+
+.profile-image {
+  background-image: url("images/C105737E-190E-4DEE-9575-85D298D22723.JPEG");
+  background-size: cover;
+  background-position: center 60%;
+  width: auto;
+
+  /* PCデフォルトで従来の高さ */
+  height: 700px;
+
+  display: flex;
+  color: white;
+  align-items: center; /* 中央寄せ補助（モバイルでも効く）*/
 }
 
-.profile-image h2{
-    margin: auto;
-    font-size: 50px;
-    font-weight: bold;
-}
-
-.profile-information{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-
-}
-
-body{
-    background-color: #f7f8fa;
-}
-
-.myself{
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px 20px;
-    width: 45%;
-    box-sizing: border-box;
-    background-color: #fff;
-}
-
-.myself h3{
-    text-transform: uppercase; 
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-.myself ul{
-    list-style: none;
-    padding: 0;  
-}
-
-.myself li{ 
-    margin-bottom: 10px; 
-    font-size: 1em;
-    
-}
-
-.experiences{
-    width: 45%;
-    box-sizing: border-box;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    background-color: #fff;
-    padding: 20px;
-    margin: 10px 20px;
-}
-
-.experiences ul {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    gap: 30px;
-}
-
-
-.experiences li {
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    gap: 5px; 
-    text-align: center; 
-    margin-left: 20px;
-}
-
-
-.experiences li i {
-    font-size: 3.5em; 
-    color: #666; 
-}
-
-
-.experiences li span {
-    max-width: 4em; 
-    font-size: 0.9em; 
-    color: #333; 
-    word-break: keep-all; 
-    line-height: 1.2; 
-}
-
-
-.experiences h3{
-    display: flex;
-    justify-content: center;
-    text-transform: uppercase; 
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 20px; 
-}
-
-.skills {
-    width: 45%;
-    box-sizing: border-box;
-    padding: 20px;
-    margin: 10px 20px;
-    
-    /* モダンなデザイン（前回のおさらい）*/
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-}
-
-.skills h3 {
-    text-transform: uppercase; 
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-
-.skills ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.skills-list {
-    display: flex;
-    justify-content: space-between; /* 3項目を均等に配置 */
-}
-
-.skill-item {
-    /* 3分割するので、幅を33%弱にする */
-    width: 30%; 
-}
-.skills-list h6{
-    font-size: 1em;
-}
-
-.philosophy{
-    width: 45%;
-    box-sizing: border-box;
-    padding: 20px;
-    margin: 10px 20px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-}
-
-.philosophy h3{
-    text-transform: uppercase; 
-    font-size: 1.2em;
-    color: #333;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.philosophy p {
-    line-height: 1.6; /* 行間を広げて読みやすく */
-    margin: 0 0 1em 0; /* 段落の下に余白 */
-}
-
-
-.study-gallery {
-    width: 95%; /* 左右のマージンを考慮 */
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-}
-
-.gallery h3 {
-    text-transform: uppercase;
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-/* 写真を横並びにする親要素 */
-.gallery-images {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* アイテム間の隙間 */
-}
-
-/* 写真と説明のセット */
-.gallery-item {
-    width: 32%; /* 3分割するための幅 */
-}
-
-/* 写真のスタイル */
-.gallery-item img {
-    width: 100%; /* 親要素いっぱいに広げる */
-    height: 200px; /* 高さを揃える */
-    object-fit: cover; /* 比率を保ったままトリミング */
-    border-radius: 8px; /* 角を丸める */
-    display: block; /* 画像下の余白を消す */
-}
-
-/* 説明文のスタイル */
-.gallery-item p {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 8px; /* 写真との間に余白を作る */
-    line-height: 1.5;
-}
-
-
-
-.intern-gallery {
-    width: 95%; /* 左右のマージンを考慮 */
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-}
-
-.intern-gallery h3 {
-    text-transform: uppercase;
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-/* 写真を横並びにする親要素 */
-.intern-images {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* アイテム間の隙間 */
-}
-
-/* 写真と説明のセット */
-.intern-item {
-    width: 25%; /* 3分割するための幅 */
-}
-
-/* 写真のスタイル */
-.intern-item img {
-    width: 100%; /* 親要素いっぱいに広げる */
-    height: 200px; /* 高さを揃える */
-    object-fit: cover; /* 比率を保ったままトリミング */
-    border-radius: 8px; /* 角を丸める */
-    display: block; /* 画像下の余白を消す */
-}
-
-/* 説明文のスタイル */
-.intern-item p {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 8px; /* 写真との間に余白を作る */
-    line-height: 1.5;
-}
-
-.zemi-gallery {
-    width: 95%; /* 左右のマージンを考慮 */
-    box-sizing: border-box;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-}
-
-.zemi-gallery h3 {
-    text-transform: uppercase;
-    font-size: 1.2em;
-    color: #333;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-
-/* 写真を横並びにする親要素 */
-.zemi-images {
-    display: flex;
-    justify-content: space-between;
-    gap: 20px; /* アイテム間の隙間 */
-}
-
-/* 写真と説明のセット */
-.zemi-item {
-    width: 50%; /* 3分割するための幅 */
-}
-
-/* 写真のスタイル */
-.zemi-item img {
-    width: 100%; /* 親要素いっぱいに広げる */
-    height: 200px; /* 高さを揃える */
-    object-fit: contain; /* 比率を保ったままトリミング */
-    border-radius: 8px; /* 角を丸める */
-    display: block; /* 画像下の余白を消す */
-    border: 1px solid #ccc;
-}
-
-/* 説明文のスタイル */
-.zemi-item p {
-    font-size: 0.9em;
-    color: #555;
-    margin-top: 8px; /* 写真との間に余白を作る */
-    line-height: 1.5;
-}
-
-.main-footer {
-    background-color: #333; /* ヘッダーと同じ背景色 */
-    color: #f7f8fa; /* 明るいデフォルト文字色 */
-    padding: 40px 20px;
-    text-align: center;
-    margin-top: 30px; /* mainコンテンツとの間に余白 */
-}
-
-
-/* "Contact" のタイトル */
-.footer-content h3 {
-    text-transform: uppercase;
-    font-size: 1.5em;
-    margin-top: 0;
-    margin-bottom: 30px; /* リンクとの間に十分な余白 */
-    color: #fff;
-    border-bottom: none; /* (もし .card h3 のスタイルが適用されてしまう場合) */
-}
-
-/* Email / GitHub のリンク */
-.contact-links {
-    margin-bottom: 30px; /* 電話番号セクションとの間に余白 */
-}
-
-.contact-links a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
-    font-weight: bold;
-    margin: 0 15px; /* リンク同士の隙間 */
-    transition: color 0.2s;
-}
-
-.contact-links a:hover {
-    color: #aaa; /* ホバーで少し薄く */
-}
-
-.contact-links a i {
-    margin-right: 8px; /* アイコンと文字の隙間 */
-}
-
-/* "Phone" のセクション */
-.tell {
-    margin-bottom: 30px; /* コピーライトとの間に余白 */
-}
-
-/* "Phone" の小見出し (h4) */
-.tell h4 {
-    margin: 0;
-    font-size: 1em;
-    font-weight: bold;
-    color: #aaa; /* ラベルなので少し控えめな色に */
-    text-transform: uppercase;
-    letter-spacing: 1px; /* 見た目の調整 */
-}
-
-/* 電話番号のテキスト (p) */
-.tell p {
-    margin: 5px 0 0 0; /* h4との間に少し余白 */
-    font-size: 1.1em;
-    color: #fff; /* 電話番号ははっきりと白 */
-}
-
-/* コピーライト */
-.copyright {
-    font-size: 0.9em;
-    color: #888; /* 控えめな色 */
-    margin: 0; /* pタグのデフォルトマージンをリセット */
-}
-
-/* ===== モバイル安定化：共通 ===== */
-
-/* 固定ヘッダー分、本文を下げる（ヘッダー高さは56px想定） */
-body { padding-top: 56px; overflow-x: hidden; }
-
-/* ヘッダーを一定高さに（なければ付与） */
-.main-header { height: 56px; padding: 8px 16px; }
-.main-header ul { flex-wrap: wrap; gap: 4px; }
-
-/* ヒーロー画像：固定700pxをやめ、画面に応じた高さに */
-.profile-image{
-  /* 既存のheight:700px; を上書き */
-  height: min(60vh, 420px);
-  /* あるいはアスペクト比で管理したい場合は↓でもOK
-  aspect-ratio: 16 / 9;
-  height: auto;
-  */
-  align-items: center; /* 中央寄せ補助 */
-}
-.profile-image h2{
-  font-size: clamp(24px, 7vw, 50px);
+.profile-image h2 {
+  margin: auto;
+  font-size: 50px;
+  font-weight: bold;
   text-align: center;
 }
 
-/* 画像がはみ出さないように */
-img, video { max-width: 100%; height: auto; display: block; }
+/* ===========================
+   Sections / Cards
+   =========================== */
 
-/* カード類の固定幅を可変に */
-.myself, .experiences, .skills, .philosophy { width: 100%; }
-
-/* ギャラリーの横並びは小画面で折り返す */
-.gallery-images, .intern-images, .zemi-images { flex-wrap: wrap; }
-
-/* ====== ここからブレークポイント ====== */
-
-/* タブレット以下 */
-@media (max-width: 768px) {
-  /* プロフィール情報の2カラム→1〜2カラムに自動調整 */
-  .profile-information { gap: 16px; }
-
-  /* ギャラリー3/4カラム → 2カラム */
-  .gallery-item { width: 48%; }
-  .intern-item  { width: 48%; }
-  .zemi-item    { width: 100%; } /* 画像が大きいようなので1列推奨 */
-
-  /* 画像の高さを少し低めに（比率維持） */
-  .gallery-item img,
-  .intern-item img,
-  .zemi-item img { height: 180px; }
+.profile-information {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-/* スマホ（狭い） */
-@media (max-width: 480px) {
-  /* すべて1カラムで読みやすく */
-  .gallery-item,
-  .intern-item,
-  .zemi-item { width: 100%; }
+/* 2カラム幅（PC） */
+.myself,
+.experiences,
+.skills,
+.philosophy {
+  width: 45%;
+  box-sizing: border-box;
 
-  .gallery-item img,
-  .intern-item img,
-  .zemi-item img { height: 160px; }
-
-  /* ボタンは全幅でタップしやすく */
-  .contact-links a,
-  .link-buttons a { display:block; width:100%; margin:8px 0; text-align:center; }
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 20px;
 }
 
-/* ===== スマホ用ナビゲーション修正 ===== */
-@media (max-width: 768px) {
-  .main-header {
-    flex-direction: column;       /* 縦積みにする */
-    align-items: flex-start;
-    height: auto;                /* 固定高さを解除 */
-    padding: 8px 12px;
-  }
-
-  .main-header h1 {
-    font-size: 18px;
-    margin-bottom: 8px;
-  }
-
-  .main-header ul {
-    flex-wrap: wrap;             /* 折り返し可能に */
-    justify-content: flex-start;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-    gap: 8px;
-  }
-
-  .main-header li {
-    flex: 1 1 auto;
-  }
-
-  .main-header a {
-    display: block;
-    text-align: center;
-    padding: 6px 0;
-    font-size: 0.9rem;
-  }
+/* 見出し */
+.myself h3,
+.experiences h3,
+.skills h3,
+.philosophy h3 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: #333;
+  margin-bottom: 20px;
 }
 
-/* ===== より小さいスマホ ===== */
-@media (max-width: 480px) {
-  .main-header h1 {
-    font-size: 16px;
-  }
-  .main-header a {
-    font-size: 0.85rem;
-    padding: 6px;
-  }
+/* About */
+.myself ul {
+  list-style: none;
+  padding: 0;
+}
+.myself li {
+  margin-bottom: 10px;
+  font-size: 1em;
 }
 
-/* ===== 1) まず “グローバル” はPC寄りのデフォルトにしておく ===== */
-.main-header { height: auto; padding: 12px 24px; flex-direction: row; }
-body { padding-top: 0; }               /* 固定ヘッダー分の余白はPCでは不要 */
-.profile-image { height: 700px; }      /* PCは従来の高さに戻す */
-.myself, .experiences, .skills, .philosophy { width: 45%; } /* 2カラム維持 */
-.gallery-images, .intern-images, .zemi-images { flex-wrap: nowrap; }
+/* Experiences（アイコン列） */
+.experiences ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  gap: 30px;
+}
+.experiences li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-align: center;
+  margin-left: 20px;
+}
+.experiences li i {
+  font-size: 3.5em;
+  color: #666;
+}
+.experiences li span {
+  max-width: 4em;
+  font-size: 0.9em;
+  color: #333;
+  word-break: keep-all;
+  line-height: 1.2;
+}
+
+/* Skills */
+.skills ul {
+  list-style: none;
+  padding-left: 0;
+}
+.skills-list {
+  display: flex;
+  justify-content: space-between; /* 3項目を均等に配置 */
+}
+.skill-item {
+  width: 30%; /* 3分割 */
+}
+.skills-list h6 {
+  font-size: 1em;
+}
+
+/* Philosophy */
+.philosophy h3 {
+  font-weight: bold;
+}
+.philosophy p {
+  line-height: 1.6;
+  margin: 0 0 1em 0;
+}
+
+/* ===========================
+   Galleries
+   =========================== */
+
+/* Study */
+.study-gallery,
+.intern-gallery,
+.zemi-gallery {
+  width: 95%; /* 左右のマージンを考慮 */
+  box-sizing: border-box;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px;
+}
+
+/* セクション見出し（ギャラリー共通） */
+.gallery h3,
+.intern-gallery h3,
+.zemi-gallery h3 {
+  text-transform: uppercase;
+  font-size: 1.2em;
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* 横並び親 */
+.gallery-images,
+.intern-images,
+.zemi-images {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap; /* PCでは折り返さない */
+}
+
+/* 各アイテム幅（PC） */
 .gallery-item { width: 32%; }
 .intern-item  { width: 25%; }
 .zemi-item    { width: 50%; }
 
-/* ===== 2) タブレット以下（ここに “モバイル用の変更” を閉じ込める）===== */
-@media (max-width: 768px) {
-  /* 固定ヘッダーの重なり回避はモバイルだけに適用 */
-  body { padding-top: 56px; overflow-x: hidden; }
-
-  .main-header {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
-    padding: 8px 12px;
-  }
-  .main-header ul { flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
-
-  /* ヒーロー画像は可変に（ここでだけ上書き） */
-  .profile-image { height: min(60vh, 420px); align-items: center; }
-  .profile-image h2 { font-size: clamp(24px, 7vw, 50px); text-align: center; }
-
-  /* 1カラム化 */
-  .myself, .experiences, .skills, .philosophy { width: 100%; }
-
-  /* グリッド/ギャラリーは折り返す */
-  .gallery-images, .intern-images, .zemi-images { flex-wrap: wrap; gap: 16px; }
-  .gallery-item, .intern-item { width: 48%; }
-  .zemi-item { width: 100%; }
-
-  .gallery-item img, .intern-item img, .zemi-item img { height: 180px; }
-
-  /* ボタン・リンクは押しやすく */
-  .contact-links a, .link-buttons a { display:block; width:100%; margin:8px 0; text-align:center; }
+/* 画像のスタイル */
+.gallery-item img,
+.intern-item img,
+.zemi-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;   /* zemi は下で上書き */
+  border-radius: 8px;
+  display: block;
 }
 
-/* ===== 3) さらに狭いスマホ ===== */
-@media (max-width: 480px) {
-  .gallery-item, .intern-item, .zemi-item { width: 100%; }
-  .gallery-item img, .intern-item img, .zemi-item img { height: 160px; }
-
-  .main-header a { font-size: 0.9rem; padding: 6px; }
+/* 説明文 */
+.gallery-item p,
+.intern-item p,
+.zemi-item p {
+  font-size: 0.9em;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
 }
+
+/* ゼミ画像だけ枠・contain */
+.zemi-item img {
+  object-fit: contain;
+  border: 1px solid #ccc;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+.main-footer {
+  background-color: #333;
+  color: #f7f8fa;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.footer-content h3 {
+  text-transform: uppercase;
+  font-size: 1.5em;
+  margin-top: 0;
+  margin-bottom: 30px;
+  color: #fff;
+  border-bottom: none;
+}
+
+.contact-links {
+  margin-bottom: 30px;
+}
+.contact-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin: 0 15px;
+  transition: color 0.2s;
+}
+.contact-links a:hover {
+  color: #aaa;
+}
+.contact-links a i {
+  margin-right: 8px;
+}
+
+.tell { margin-bottom: 30px; }
+.tell h4 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.tell p {
+  margin: 5px 0 0 0;
+  font-size: 1.1em;
+  color: #fff;
+}
+
+.copyright {
+  font-size: 0.9em;
+  color: #888;
+  margin: 0;
+}
+
+/* ===========================
+   小さな共通UI
+   =========================== */
 
 .detail-link {
   display: inline-block;
@@ -594,6 +331,95 @@ body { padding-top: 0; }               /* 固定ヘッダー分の余白はPCで
   text-decoration: none;
   font-weight: bold;
 }
-.detail-link:hover {
-  text-decoration: underline;
+.detail-link:hover { text-decoration: underline; }
+
+/* ===========================
+   Responsive
+   =========================== */
+
+/* --- Tablet & Down (≤768px) --- */
+@media (max-width: 768px) {
+  /* 固定ヘッダーの重なり回避（モバイルだけ適用） */
+  body { padding-top: 56px; }
+
+  /* ヘッダーは縦積み＋可変 */
+  .main-header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+    padding: 8px 12px;
+  }
+  .main-header h1 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  .main-header ul {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    gap: 8px;
+  }
+  .main-header li { flex: 1 1 auto; }
+  .main-header a {
+    display: block;
+    text-align: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+  }
+
+  /* ヒーローは可変高さに */
+  .profile-image {
+    height: min(60vh, 420px);
+  }
+  .profile-image h2 {
+    font-size: clamp(24px, 7vw, 50px);
+  }
+
+  /* セクションは1カラム化 */
+  .myself,
+  .experiences,
+  .skills,
+  .philosophy {
+    width: 100%;
+  }
+
+  /* ギャラリーは折り返し */
+  .gallery-images,
+  .intern-images,
+  .zemi-images {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .gallery-item,
+  .intern-item { width: 48%; }
+  .zemi-item   { width: 100%; }
+
+  /* 画像高さを少し低めに */
+  .gallery-item img,
+  .intern-item img,
+  .zemi-item img { height: 180px; }
+
+  /* ボタンリンクは全幅で押しやすく */
+  .contact-links a,
+  .link-buttons a {
+    display: block;
+    width: 100%;
+    margin: 8px 0;
+    text-align: center;
+  }
+}
+
+/* --- Small Phone (≤480px) --- */
+@media (max-width: 480px) {
+  .main-header h1 { font-size: 16px; }
+  .main-header a  { font-size: 0.85rem; padding: 6px; }
+
+  .gallery-item,
+  .intern-item,
+  .zemi-item { width: 100%; }
+
+  .gallery-item img,
+  .intern-item img,
+  .zemi-item img { height: 160px; }
 }

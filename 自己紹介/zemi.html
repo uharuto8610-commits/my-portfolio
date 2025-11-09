@@ -4,8 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>ゼミ活動 | 自己紹介</title>
+
+  <!-- 共通CSS -->
   <link rel="stylesheet" href="style.css" />
+
   <style>
+    /* ページ内カードレイアウト補助（profile 側にあれば削ってOK） */
     .container { max-width: 1000px; margin: 80px auto 40px; padding: 0 16px; }
     .card { background:#fff; border-radius:8px; box-shadow:0 4px 12px rgba(0,0,0,.08); padding:20px; margin:12px 0; }
     .breadcrumb { font-size:.9rem; margin-bottom:8px; opacity:.85; }
@@ -15,65 +19,78 @@
   </style>
 </head>
 <body>
-    
+
+  <!-- 固定ヘッダー（profile.html と同じ構造） -->
   <header class="main-header">
     <h1>自己紹介</h1>
     <ul>
       <li><a href="maleysia.html">留学</a></li>
       <li><a href="intern.html">サービスラーニング</a></li>
+      <!-- 現在のページを aria-current で明示 -->
       <li><a href="zemi.html" aria-current="page">ゼミ活動</a></li>
     </ul>
   </header>
+
+  <!-- 固定ヘッダー分の余白 -->
   <div style="height: 60px;"></div>
+
+  <!-- 戻る導線 -->
   <nav class="breadcrumb">
-  <a href="profile.html">← プロフィールに戻る</a>
-</nav>
+    <a href="profile.html">← プロフィールに戻る</a>
+  </nav>
 
-<section class="card">
-  <h2 class="section-title">ゼミ概要</h2>
-  <p>3年生では株式会社<span>ANGEL COMPANY</span>と連携し、企業のマスコットキャラクター
-    <strong>「ノゴロー」</strong>の知名度向上を目的としたプロジェクトに取り組みました。
-    4年生では主に卒業論文の制作を行っています。</p>
-</section>
+  <!-- ===== ゼミ概要 ===== -->
+  <section class="card">
+    <h2 class="section-title">ゼミ概要</h2>
+    <p>3年生では株式会社 <strong>ANGEL COMPANY</strong> と連携し、マスコットキャラクター
+      <strong>「ノゴロー」</strong>の知名度向上プロジェクトに取り組みました。
+      4年生では卒業論文の制作を進めています。</p>
+  </section>
 
-<section class="card">
-  <h2 class="section-title">活動内容</h2>
+  <!-- ===== 活動内容 ===== -->
+  <section class="card">
+    <h2 class="section-title">活動内容</h2>
 
-  <h3>SNSでの認知度向上</h3>
-  <p>Instagramリール・TikTok・YouTube Shorts の3媒体で動画投稿を行いました。  
-     私は主に<strong>YouTube Shorts</strong>を担当しました。</p>
+    <!-- SNS運用 -->
+    <h3>SNSでの認知度向上</h3>
+    <p>Instagramリール / TikTok / YouTube Shorts での動画投稿を実施。  
+       私は主に <strong>YouTube Shorts</strong> を担当しました。</p>
 
-  <ul>
-    <li>投稿のタイミングや伸びやすい動画の形式を分析</li>
-    <li>「雑学 × ノゴロー（猫）」など話題性を掛け合わせた企画を考案</li>
-    <li>視聴者からのコメント反応を踏まえて、次の投稿に反映</li>
-  </ul>
+    <ul>
+      <li>再生が伸びやすい投稿時間帯・動画構造の分析</li>
+      <li>「雑学 × ノゴロー」といったテーマの掛け合わせ企画</li>
+      <li>コメント反応を次の企画に反映する改善ループ</li>
+    </ul>
 
-  <p>その結果、<strong>自分の投稿した雑学系動画が10万再生を達成</strong>し、  
-    「またこういう動画を見たい」といったコメントも届き、手応えを感じました。</p>
+    <p>その結果、<strong>自分の投稿が10万再生を達成</strong>。  
+      「また見たい」という視聴者コメントが増え、方向性に手応えを感じました。</p>
 
-  <hr>
+    <hr>
 
-  <h3>地元商店街イベントでの企画出店</h3>
-  <p>地域イベントに出店し、ノゴローの認知を広げる企画を行いました。</p>
-  <ul>
-    <li>射的コーナーの企画・運営</li>
-    <li>景品をノゴローグッズにすることで知名度向上を図る</li>
-  </ul>
-  <p>最終的に<strong>グッズがイベント終了前に売り切れるほど人気</strong>となりました。</p>
-</section>
+    <!-- 地元イベント -->
+    <h3>地元商店街イベントでの企画出店</h3>
+    <p>地域イベントに出店し、ノゴローの認知を広げる取り組みを行いました。</p>
+    <ul>
+      <li>射的ゲームの企画 / 運営</li>
+      <li>景品としてノゴローグッズを提供し認知向上を図る</li>
+    </ul>
+    <p>結果として、<strong>グッズはイベント終了前に売り切れ</strong>るほどの人気になりました。</p>
+  </section>
 
-<section class="card">
-  <h2 class="section-title">学んだこと</h2>
-  <ul>
-    <li>「かわいい」「面白い」だけでは認知は広がらないこと</li>
-    <li><strong>誰に届けるのかを決めて、企画を組み立てる重要性</strong></li>
-    <li>小さな反応（いいね・コメント・表情）を手掛かりに改善していく姿勢</li>
-  </ul>
-  <p>実際にコメントや反応が返ってくる中で、<strong>相手の立場に立って考える力</strong>が鍛えられました。</p>
+  <!-- ===== 学び ===== -->
+  <section class="card">
+    <h2 class="section-title">学んだこと</h2>
+    <ul>
+      <li>「かわいい・面白い」だけでは届かない → <strong>届けたい相手を明確にする重要性</strong></li>
+      <li><strong>小さな反応を観察し改善する「検証サイクル」</strong>の大切さ</li>
+      <li>反応が返ってくる場に身を置くことで育つ、<strong>相手視点のコミュニケーション</strong></li>
+    </ul>
+    <p>この経験は、プロダクトを作り、改善していく開発にも通じる視点だと感じています。</p>
 
-  <a class="back" href="profile.html">← プロフィールに戻る</a>
-</section>
+    <!-- 戻る導線 -->
+    <a class="back" href="profile.html">← プロフィールに戻る</a>
+  </section>
 
 </body>
 </html>
+
